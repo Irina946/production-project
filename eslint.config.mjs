@@ -7,6 +7,7 @@ import json from "@eslint/json";
 import markdown from "@eslint/markdown";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import i18nextPlugin from "eslint-plugin-i18next";
 
 export default defineConfig([
     {
@@ -26,11 +27,13 @@ export default defineConfig([
         plugins: {
             "@typescript-eslint": tseslint.plugin,
             react: pluginReact,
+            i18next: i18nextPlugin
         },
         extends: [
             js.configs.recommended,
             ...tseslint.configs.recommended,
             pluginReact.configs.flat.recommended,
+            
         ],
         rules: {
             "react/jsx-indent": ["error", 4],
@@ -54,6 +57,7 @@ export default defineConfig([
             "@typescript-eslint/no-unused-vars": "off",
             "react/prop-types": "off",
             "no_underscore_dangle": "off",
+            "i18next/no-literal-string": ["error", { markupOnly: true }],
         },
         settings: {
             react: {
