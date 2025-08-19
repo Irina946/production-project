@@ -22,8 +22,9 @@ export const Sidebar = ({ className }: ISidebarProps) => {
         >
             <button
                 onClick={onToggle}
+                className={styles.collapseBtn}
             >
-                toggle
+                {collapsed ? '>' : '<'}
             </button>
             <div className={styles.switchers}>
                 <ThemeSwitcher />
