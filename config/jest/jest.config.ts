@@ -9,7 +9,7 @@ const config: Config = {
     coverageDirectory: "coverage",
     coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
     moduleDirectories: ["node_modules"],
-    moduleFileExtensions: ["js","jsx","ts","tsx","json","node"],
+    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
     rootDir: path.resolve(__dirname, '../../'),
     roots: ["<rootDir>/src"],
     testMatch: [
@@ -18,6 +18,16 @@ const config: Config = {
         "**/*.spec.ts",
         "**/*.spec.tsx",
     ],
+    modulePaths: [
+        "<rootDir>src"
+    ],
+    setupFilesAfterEnv: [
+        "<rootDir>config/jest/setupTests.ts"
+    ],
+    moduleNameMapper: {
+        "\\.(css|scss)$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+    }
 };
 
 export default config;
