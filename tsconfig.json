@@ -16,11 +16,18 @@
         "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "types": ["jest"]
+        "types": [
+            "jest",
+            "@testing-library/jest-dom"
+        ]
     },
     "ts-node": {
         "compilerOptions": {
             "module": "commonjs"
         }
-    }
+    },
+    "include": [
+        "./src/**/**.*",
+        "./config/jest/setupTests.ts"
+    ]
 }

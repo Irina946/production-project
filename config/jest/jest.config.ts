@@ -1,6 +1,7 @@
 import type { Config } from 'jest';
 import path from 'path';
 
+
 const config: Config = {
     preset: 'ts-jest',                     // <-- для TS
     testEnvironment: 'jest-environment-jsdom', // <-- для jsdom
@@ -9,7 +10,7 @@ const config: Config = {
     coverageDirectory: "coverage",
     coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
     moduleDirectories: ["node_modules"],
-    moduleFileExtensions: ["js","jsx","ts","tsx","json","node"],
+    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
     rootDir: path.resolve(__dirname, '../../'),
     roots: ["<rootDir>/src"],
     testMatch: [
@@ -18,6 +19,14 @@ const config: Config = {
         "**/*.spec.ts",
         "**/*.spec.tsx",
     ],
+    modulePaths: [
+        "<rootDir>/src",
+    ],
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+    moduleNameMapper: {
+        '\\.(css|scss|sass)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    }
 };
 
 export default config;
