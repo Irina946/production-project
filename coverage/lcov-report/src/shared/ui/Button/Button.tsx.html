@@ -128,13 +128,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { classNames } from "shared/lib/classNames/classNames"
 import styles from './Button.module.scss'
 &nbsp;
-export enum ThemeButton {
+export enum ButtonTheme {
     CLEAR = 'clear',
 }
 &nbsp;
 interface IButtonProps extends React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt; {
     className?: string;
-    theme?: ThemeButton;
+    theme?: ButtonTheme;
 }
 &nbsp;
 export const Button: React.FC&lt;IButtonProps&gt; = (props) =&gt; {
