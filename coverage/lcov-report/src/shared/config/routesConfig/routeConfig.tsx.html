@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/widgets/LanguageSwither/ui/LanguageSwither.tsx</title>
+    <title>Code coverage report for src/shared/config/routesConfig/routeConfig.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/widgets/LanguageSwither/ui</a> LanguageSwither.tsx</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/shared/config/routesConfig</a> routeConfig.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -91,26 +91,26 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,35 +119,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { classNames } from "shared/lib/classNames/classNames"
-import styles from './LanguageSwither.module.scss'
-import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AboutPage } from "pages/AboutPage"
+import { MainPage } from "pages/MainPage"
+import { NotFoundPage } from "pages/NotFoundPage"
+import { RouteProps } from "react-router-dom"
 &nbsp;
-interface ILanguageSwitherProps {
-    className?: string;
-    short?: boolean
+export enum AppRoutes {
+    MAIN = 'main',
+    ABOUT = 'about',
+    NOT_FOUND = 'not_found'
 }
 &nbsp;
-export const LanguageSwither = ({ className, short }: ILanguageSwitherProps) =&gt; {
+export const RoutePath: Record&lt;AppRoutes, string&gt; = {
+    [AppRoutes.MAIN]: '/',
+    [AppRoutes.ABOUT]: '/about',
+    [AppRoutes.NOT_FOUND]: '*'
+}
 &nbsp;
-    const { t, i18n } = useTranslation();
-&nbsp;
-    const toggle = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');</span>
+export const routeConfig: Record&lt;AppRoutes, RouteProps&gt; = {
+    [AppRoutes.MAIN]: {
+        path: RoutePath.main,
+        element: &lt;MainPage /&gt;
+    },
+    [AppRoutes.ABOUT]: {
+        path: RoutePath.about,
+        element: &lt;AboutPage /&gt;
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: &lt;NotFoundPage /&gt;
     }
-&nbsp;
-    return (
-        &lt;Button
-            onClick={toggle}
-            className={classNames(styles.languageSwither, {}, [className])}
-            theme={ButtonTheme.CLEAR}
-        &gt;
-            {short ? t('Короткий язык') : t(i18n.language === 'ru' ? 'Русский' : <span class="branch-1 cbranch-no" title="branch not covered" >'Английский')</span>}
-        &lt;/Button&gt;
-    )
-}
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
