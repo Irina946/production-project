@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames"
-import * as styles from './PageLoader.module.scss'
+import styles from './PageLoader.module.scss'
 import { Loader } from "shared/ui/Loader/Loader"
 
 interface IPageLoaderProps {
@@ -8,7 +8,7 @@ interface IPageLoaderProps {
 
 export const PageLoader = ({className}: IPageLoaderProps) => {
     return (
-        <div className={classNames(styles.PageLoader, {}, [className])}>
+        <div className={classNames(styles.pageLoader, {}, [className])}>
             <Loader />
         </div>
     )

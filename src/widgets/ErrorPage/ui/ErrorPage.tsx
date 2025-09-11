@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames"
-import * as styles from './ErrorPage.module.scss'
+import styles from './ErrorPage.module.scss'
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button/Button";
 
@@ -15,7 +15,7 @@ export const ErrorPage = ({className}: IErrorPageProps) => {
     };
 
     return (
-        <div className={classNames(styles.ErrorPage, {}, [className])}>
+        <div className={classNames(styles.errorPage, {}, [className])}>
             <p>{t('Что-то пошло не так')}</p>
             <Button onClick={reloadPage}>
                 {t('Обновить страницу')}

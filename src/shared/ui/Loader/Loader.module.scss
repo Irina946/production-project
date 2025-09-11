@@ -1,10 +1,10 @@
 /* HTML: <div class="loader"></div> */
-.Loader {
+.loader {
     display: inline-grid;
 }
 
-.Loader::before,
-.Loader::after {
+.loader::before,
+.loader::after {
     content: "";
     grid-area: 1/1;
     height: 30px;
@@ -21,7 +21,7 @@
     animation: l10 1.5s infinite linear;
 }
 
-.Loader::after {
+.loader::after {
     scale: -1;
 }
 

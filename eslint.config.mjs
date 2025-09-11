@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 // eslint.config.js
 import js from "@eslint/js";
 import globals from "globals";
@@ -33,7 +36,7 @@ export default defineConfig([
             js.configs.recommended,
             ...tseslint.configs.recommended,
             pluginReact.configs.flat.recommended,
-            
+
         ],
         rules: {
             "react/jsx-indent": ["error", 4],
@@ -94,5 +97,16 @@ export default defineConfig([
         plugins: { css },
         language: "css/css",
         extends: ["css/recommended"],
+    },
+    {
+        files: ["**/*.tsx"],
+        plugins: { i18next: i18nextPlugin },
+        extends: [],
+    },
+    {
+        files: ['**/src/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off'
+        },
     },
 ]);

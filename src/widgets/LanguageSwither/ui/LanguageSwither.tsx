@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames"
-import * as styles from './LanguageSwither.module.scss'
+import styles from './LanguageSwither.module.scss'
 import { useTranslation } from "react-i18next";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 
@@ -18,7 +18,7 @@ export const LanguageSwither = ({ className }: ILanguageSwitherProps) => {
     return (
         <Button
             onClick={toggle}
-            className={classNames(styles.LanguageSwither, {}, [className])}
+            className={classNames(styles.languageSwither, {}, [className])}
             theme={ThemeButton.CLEAR}
         >
             {t(i18n.language === 'ru' ? 'Русский' : 'Английский')}
