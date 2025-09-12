@@ -1,0 +1,11 @@
+import { IStateSchema } from "app/providers/StoreProvider"
+import { getCounter } from "./getCounter"
+
+describe('getCounter', () => {
+    test('should return counter value', () => {
+        const state: Partial<IStateSchema> = {
+            counter: { value: 1 },
+        }
+        expect(getCounter(state as IStateSchema)).toEqual({ value: 1 })
+    })
+})
