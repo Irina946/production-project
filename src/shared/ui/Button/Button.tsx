@@ -3,9 +3,10 @@ import styles from './Button.module.scss'
 
 export enum ButtonTheme {
     CLEAR = 'clear',
+    CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted'
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
@@ -32,15 +33,13 @@ export const Button: React.FC<IButtonProps> = (props) => {
         ...otherProps
     } = props
 
-    
+
 
     const mods: Record<string, boolean> = {
         [styles[theme]]: true,
         [styles.square]: square,
         [styles[size]]: true
     }
-
-    console.log([styles[size]])
 
     return (
         <button
