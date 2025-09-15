@@ -14,7 +14,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "start:dev:server": "node jsonServer/index.js"
+    "start:dev:server": "node jsonServer/index.js",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -80,7 +81,8 @@
     "typescript-eslint": "^8.39.1",
     "webpack": "^5.100.2",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.15.2"
+    "webpack-dev-server": "^4.15.2",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",
