@@ -1,0 +1,30 @@
+.input {
+    width: 100%;
+    padding: 8px 16px;
+    font: var(--font-m);
+    border: 1px solid var(--icon-color);
+    border-radius: 48px;
+    background: var(--bg-color);
+    transition: border-color 0.3s ease-in-out;
+    color: var(--primary-color);
+
+    &:focus {
+        outline: none;
+    }
+
+    ;
+
+    :focus,
+    :hover,
+    :active {
+        border-color: var(--accent-color);
+    }
+
+    ;
+
+    ::placeholder {
+        color: var(--hint-color);
+    }
+
+    ;
+}
